@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPH_project = new System.Windows.Forms.TabControl();
             this.tabPhProject = new System.Windows.Forms.TabPage();
             this.checkKeepDataBox = new System.Windows.Forms.CheckBox();
@@ -108,7 +108,7 @@
             this.checkKeepDataBox.Location = new System.Drawing.Point(35, 375);
             this.checkKeepDataBox.Name = "checkKeepDataBox";
             this.checkKeepDataBox.Size = new System.Drawing.Size(77, 17);
-            this.checkKeepDataBox.TabIndex = 35;
+            this.checkKeepDataBox.TabIndex = 33;
             this.checkKeepDataBox.Text = "Keep Data";
             this.checkKeepDataBox.UseVisualStyleBackColor = true;
             // 
@@ -121,10 +121,11 @@
             this.progressBar.Name = "progressBar";
             this.progressBar.Size = new System.Drawing.Size(142, 19);
             this.progressBar.Step = 17;
-            this.progressBar.TabIndex = 34;
+            this.progressBar.TabIndex = 35;
             // 
             // datumBox
             // 
+            this.datumBox.CalendarMonthBackground = System.Drawing.SystemColors.Info;
             this.datumBox.CustomFormat = "dd,MM,yyyy";
             this.datumBox.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.datumBox.Location = new System.Drawing.Point(78, 216);
@@ -137,16 +138,20 @@
             // 
             // addButton
             // 
+            this.addButton.BackColor = System.Drawing.Color.SteelBlue;
+            this.addButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.addButton.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.addButton.Location = new System.Drawing.Point(34, 394);
             this.addButton.Name = "addButton";
-            this.addButton.Size = new System.Drawing.Size(143, 23);
-            this.addButton.TabIndex = 33;
+            this.addButton.Size = new System.Drawing.Size(143, 36);
+            this.addButton.TabIndex = 34;
             this.addButton.Text = "Dodaj osobu";
-            this.addButton.UseVisualStyleBackColor = true;
+            this.addButton.UseVisualStyleBackColor = false;
             this.addButton.Click += new System.EventHandler(this.addButton_Click);
             // 
             // spolBox
             // 
+            this.spolBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.spolBox.FormattingEnabled = true;
             this.spolBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.spolBox.Location = new System.Drawing.Point(78, 156);
@@ -156,6 +161,7 @@
             // 
             // mjestoBox
             // 
+            this.mjestoBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.mjestoBox.Location = new System.Drawing.Point(78, 303);
             this.mjestoBox.Name = "mjestoBox";
             this.mjestoBox.Size = new System.Drawing.Size(100, 20);
@@ -164,6 +170,7 @@
             // 
             // drzavaBox
             // 
+            this.drzavaBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.drzavaBox.Location = new System.Drawing.Point(78, 249);
             this.drzavaBox.Name = "drzavaBox";
             this.drzavaBox.Size = new System.Drawing.Size(100, 20);
@@ -172,6 +179,7 @@
             // 
             // prezimeBox
             // 
+            this.prezimeBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.prezimeBox.Location = new System.Drawing.Point(78, 122);
             this.prezimeBox.Name = "prezimeBox";
             this.prezimeBox.Size = new System.Drawing.Size(100, 20);
@@ -180,6 +188,7 @@
             // 
             // imeBox
             // 
+            this.imeBox.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.imeBox.Location = new System.Drawing.Point(78, 87);
             this.imeBox.Name = "imeBox";
             this.imeBox.Size = new System.Drawing.Size(100, 20);
@@ -243,25 +252,26 @@
             // dataPersonView
             // 
             this.dataPersonView.AllowUserToAddRows = false;
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.dataPersonView.BackgroundColor = System.Drawing.SystemColors.ActiveCaption;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dataPersonView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle4.NullValue = null;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle14.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle14.NullValue = null;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataPersonView.Location = new System.Drawing.Point(203, 59);
             this.dataPersonView.Name = "dataPersonView";
             this.dataPersonView.ReadOnly = true;
@@ -271,6 +281,7 @@
             // 
             // tabSpProject
             // 
+            this.tabSpProject.BackColor = System.Drawing.Color.White;
             this.tabSpProject.Controls.Add(this.panel2);
             this.tabSpProject.Controls.Add(this.panel1);
             this.tabSpProject.Controls.Add(this.buttonReset);
@@ -282,7 +293,6 @@
             this.tabSpProject.Size = new System.Drawing.Size(910, 513);
             this.tabSpProject.TabIndex = 1;
             this.tabSpProject.Text = "Spp";
-            this.tabSpProject.UseVisualStyleBackColor = true;
             // 
             // labelSecondPile
             // 
@@ -320,6 +330,7 @@
             // buttonCardDraw
             // 
             this.buttonCardDraw.BackColor = System.Drawing.Color.DimGray;
+            this.buttonCardDraw.Cursor = System.Windows.Forms.Cursors.Hand;
             this.buttonCardDraw.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.buttonCardDraw.Location = new System.Drawing.Point(55, 192);
             this.buttonCardDraw.Name = "buttonCardDraw";
@@ -331,12 +342,15 @@
             // 
             // buttonReset
             // 
+            this.buttonReset.BackColor = System.Drawing.Color.SteelBlue;
+            this.buttonReset.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.buttonReset.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonReset.Location = new System.Drawing.Point(55, 47);
             this.buttonReset.Name = "buttonReset";
             this.buttonReset.Size = new System.Drawing.Size(191, 44);
             this.buttonReset.TabIndex = 8;
             this.buttonReset.Text = "Reset Deck";
-            this.buttonReset.UseVisualStyleBackColor = true;
+            this.buttonReset.UseVisualStyleBackColor = false;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
             // 
             // panel1
@@ -347,7 +361,7 @@
             this.panel1.Controls.Add(this.labelFirstPile);
             this.panel1.Location = new System.Drawing.Point(307, 90);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(221, 356);
+            this.panel1.Size = new System.Drawing.Size(234, 356);
             this.panel1.TabIndex = 9;
             // 
             // labelFirstPile2
@@ -369,7 +383,7 @@
             this.panel2.Controls.Add(this.labelSecondPile);
             this.panel2.Location = new System.Drawing.Point(608, 90);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(221, 356);
+            this.panel2.Size = new System.Drawing.Size(234, 356);
             this.panel2.TabIndex = 10;
             // 
             // labelSecondPile2

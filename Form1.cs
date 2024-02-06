@@ -122,17 +122,18 @@ namespace PH_project3
             if (Deck[index].CardColor == "black")
             {
                 label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
-                labelcopy.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                labelcopy.Text = Deck[index].CardSuit + Deck[index].CardNumber;
                 label.ForeColor = Color.Black;
                 labelcopy.ForeColor = Color.Black;
             }
             else
             {
                 label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
-                labelcopy.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                labelcopy.Text = Deck[index].CardSuit + Deck[index].CardNumber;
                 label.ForeColor = Color.Red;
                 labelcopy.ForeColor = Color.Red;
             }
+
             Deck.RemoveAt(index);
             labelCardsInDeck.Text = Deck.Count.ToString();
         }
@@ -338,6 +339,7 @@ namespace PH_project3
             else
             {
                 labelSecondPile.Text = "   ";
+                labelSecondPile2.Text = "   ";
                 indexCard = random.Next(0, Deck.Count);
                 removeCard(indexCard, labelFirstPile, labelFirstPile2);
             }
@@ -363,7 +365,9 @@ namespace PH_project3
             };
             labelCardsInDeck.Text = Deck.Count.ToString();
             labelFirstPile.Text = "   ";
+            labelFirstPile2.Text = "   ";
             labelSecondPile.Text = "   ";
+            labelSecondPile2.Text = "   "; 
         }
     }
 }
