@@ -114,6 +114,23 @@ namespace PH_project3
             new Card{CardNumber = "K", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "K", CardSuit = "♦", CardColor = "red" }
         };
 
+        //Methods
+        public void removeCard(int index, Label label)
+        {
+            if (Deck[index].CardColor == "black")
+            {
+                label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                label.ForeColor = Color.Black;
+            }
+            else
+            {
+                label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                label.ForeColor = Color.Red;
+            }
+            Deck.RemoveAt(index);
+            labelCardsInDeck.Text = Deck.Count.ToString();
+        }
+
         //DID_IT - 03 Try adding tabs for possible other projects.
         //TODO - 03.1 Tabs added, just figure out how to implement it (could be with new project or something else).
         public PH_project()
@@ -290,51 +307,55 @@ namespace PH_project3
         int indexCard;
         private void buttonCardDraw_Click(object sender, EventArgs e)
         {
-            nCards = random.Next(0, 2);
-            if (nCards == 0)
+            if (Deck.Count == 0) { MessageBox.Show("No cards left.", "Reset the deck.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
+            else if (Deck.Count > 1)
             {
-                indexCard = random.Next(0, Deck.Count - 1);
-                if (Deck[indexCard].CardColor == "black")
+                nCards = random.Next(0, 2);
+                if (nCards == 0)
                 {
-                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelFirstPile.ForeColor = Color.Black;
+                    labelSecondPile.Text = "   ";
+                    indexCard = random.Next(0, Deck.Count);
+                    removeCard(indexCard, labelFirstPile);
                 }
                 else
                 {
-                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelFirstPile.ForeColor = Color.Red;
+                    indexCard = random.Next(0, Deck.Count);
+                    removeCard(indexCard, labelFirstPile);
+
+                    indexCard = random.Next(0, Deck.Count);
+                    removeCard(indexCard, labelSecondPile);
                 }
-                Deck.RemoveAt(indexCard);
+                labelCardsInDeck.Text = Deck.Count.ToString();
             }
             else
             {
-                indexCard = random.Next(0, Deck.Count - 1);
-                if (Deck[indexCard].CardColor == "black")
-                {
-                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelFirstPile.ForeColor = Color.Black;
-                }
-                else
-                {
-                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelFirstPile.ForeColor = Color.Red;
-                }
-
-                Deck.RemoveAt(indexCard);
-                indexCard = random.Next(0, Deck.Count - 1);
-                if (Deck[indexCard].CardColor == "black")
-                {
-                    labelSecondPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelSecondPile.ForeColor = Color.Black;
-                }
-                else
-                {
-                    labelSecondPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
-                    labelSecondPile.ForeColor = Color.Red;
-                }
-                Deck.RemoveAt(indexCard);
+                labelSecondPile.Text = "   ";
+                indexCard = random.Next(0, Deck.Count);
+                removeCard(indexCard, labelFirstPile);
             }
+        }
+
+        private void buttonReset_Click(object sender, EventArgs e)
+        {
+            Deck.Clear();
+            Deck = new List<Card>() {
+                new Card{CardNumber = "A", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "A", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "A", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "A", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "2", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "2", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "2", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "2", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "3", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "3", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "3", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "3", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "4", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "4", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "4", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "4", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "5", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "5", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "5", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "5", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "6", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "6", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "6", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "6", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "7", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "7", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "7", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "7", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "8", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "8", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "8", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "8", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "9", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "9", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "9", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "9", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "10", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "10", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "10", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "10", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "J", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "J", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "J", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "J", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "Q", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "Q", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "Q", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "Q", CardSuit = "♦", CardColor = "red" },
+                new Card{CardNumber = "K", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "K", CardSuit = "♦", CardColor = "red" }
+            };
             labelCardsInDeck.Text = Deck.Count.ToString();
+            labelFirstPile.Text = "   ";
+            labelSecondPile.Text = "   ";
         }
     }
 }
