@@ -90,6 +90,30 @@ namespace PH_project3
             MjestoRođenja = "New York" }
         };
 
+        //SP PROJECT
+        public class Card
+        {
+            public string CardNumber { get; set; }
+            public string CardSuit { get; set; }
+            public string CardColor { get; set; }
+        }
+
+        List<Card> Deck = new List<Card>() {
+            new Card{CardNumber = "A", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "A", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "A", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "A", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "2", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "2", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "2", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "2", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "3", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "3", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "3", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "3", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "4", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "4", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "4", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "4", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "5", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "5", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "5", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "5", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "6", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "6", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "6", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "6", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "7", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "7", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "7", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "7", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "8", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "8", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "8", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "8", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "9", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "9", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "9", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "9", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "10", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "10", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "10", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "10", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "J", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "J", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "J", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "J", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "Q", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "Q", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "Q", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "Q", CardSuit = "♦", CardColor = "red" },
+            new Card{CardNumber = "K", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "K", CardSuit = "♦", CardColor = "red" }
+        };
+
         //DID_IT - 03 Try adding tabs for possible other projects.
         //TODO - 03.1 Tabs added, just figure out how to implement it (could be with new project or something else).
         public PH_project()
@@ -104,6 +128,8 @@ namespace PH_project3
             progressBar.Value = 34;
             datumBox.Format = DateTimePickerFormat.Custom;
             datumBox.CustomFormat = "dd/MM/yyyy";
+
+            labelCardsInDeck.Text = Deck.Count.ToString();
         }
 
         //DID_IT - 02 Finally get to the POINT and try list sorting.
@@ -258,5 +284,57 @@ namespace PH_project3
             }
         }
 
+        //SP PROJECT
+        Random random = new Random();
+        int nCards;
+        int indexCard;
+        private void buttonCardDraw_Click(object sender, EventArgs e)
+        {
+            nCards = random.Next(0, 2);
+            if (nCards == 0)
+            {
+                indexCard = random.Next(0, Deck.Count - 1);
+                if (Deck[indexCard].CardColor == "black")
+                {
+                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelFirstPile.ForeColor = Color.Black;
+                }
+                else
+                {
+                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelFirstPile.ForeColor = Color.Red;
+                }
+                Deck.RemoveAt(indexCard);
+            }
+            else
+            {
+                indexCard = random.Next(0, Deck.Count - 1);
+                if (Deck[indexCard].CardColor == "black")
+                {
+                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelFirstPile.ForeColor = Color.Black;
+                }
+                else
+                {
+                    labelFirstPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelFirstPile.ForeColor = Color.Red;
+                }
+
+                Deck.RemoveAt(indexCard);
+                indexCard = random.Next(0, Deck.Count - 1);
+                if (Deck[indexCard].CardColor == "black")
+                {
+                    labelSecondPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelSecondPile.ForeColor = Color.Black;
+                }
+                else
+                {
+                    labelSecondPile.Text = Deck[indexCard].CardNumber + Deck[indexCard].CardSuit;
+                    labelSecondPile.ForeColor = Color.Red;
+                }
+                Deck.RemoveAt(indexCard);
+            }
+            labelCardsInDeck.Text = Deck.Count.ToString();
+        }
     }
 }

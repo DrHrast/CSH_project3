@@ -28,11 +28,10 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPH_project = new System.Windows.Forms.TabControl();
             this.tabPhProject = new System.Windows.Forms.TabPage();
-            this.tabSpProject = new System.Windows.Forms.TabPage();
             this.checkKeepDataBox = new System.Windows.Forms.CheckBox();
             this.progressBar = new System.Windows.Forms.ProgressBar();
             this.datumBox = new System.Windows.Forms.DateTimePicker();
@@ -49,9 +48,15 @@
             this.prezimeLabel = new System.Windows.Forms.Label();
             this.nameLabel = new System.Windows.Forms.Label();
             this.dataPersonView = new System.Windows.Forms.DataGridView();
+            this.tabSpProject = new System.Windows.Forms.TabPage();
+            this.labelSecondPile = new System.Windows.Forms.Label();
+            this.labelFirstPile = new System.Windows.Forms.Label();
+            this.labelCardsInDeck = new System.Windows.Forms.Label();
+            this.buttonCardDraw = new System.Windows.Forms.Button();
             this.tabPH_project.SuspendLayout();
             this.tabPhProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonView)).BeginInit();
+            this.tabSpProject.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPH_project
@@ -89,16 +94,6 @@
             this.tabPhProject.TabIndex = 0;
             this.tabPhProject.Text = "Php";
             this.tabPhProject.UseVisualStyleBackColor = true;
-            // 
-            // tabSpProject
-            // 
-            this.tabSpProject.Location = new System.Drawing.Point(4, 22);
-            this.tabSpProject.Name = "tabSpProject";
-            this.tabSpProject.Padding = new System.Windows.Forms.Padding(3);
-            this.tabSpProject.Size = new System.Drawing.Size(910, 513);
-            this.tabSpProject.TabIndex = 1;
-            this.tabSpProject.Text = "Spp";
-            this.tabSpProject.UseVisualStyleBackColor = true;
             // 
             // checkKeepDataBox
             // 
@@ -240,30 +235,89 @@
             // dataPersonView
             // 
             this.dataPersonView.AllowUserToAddRows = false;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle11.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle11.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle11.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle11;
             this.dataPersonView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle6.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle6.NullValue = null;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle12.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle12.NullValue = null;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle12;
             this.dataPersonView.Location = new System.Drawing.Point(203, 59);
             this.dataPersonView.Name = "dataPersonView";
             this.dataPersonView.ReadOnly = true;
             this.dataPersonView.Size = new System.Drawing.Size(676, 395);
             this.dataPersonView.TabIndex = 20;
+            // 
+            // tabSpProject
+            // 
+            this.tabSpProject.Controls.Add(this.labelSecondPile);
+            this.tabSpProject.Controls.Add(this.labelFirstPile);
+            this.tabSpProject.Controls.Add(this.labelCardsInDeck);
+            this.tabSpProject.Controls.Add(this.buttonCardDraw);
+            this.tabSpProject.Location = new System.Drawing.Point(4, 22);
+            this.tabSpProject.Name = "tabSpProject";
+            this.tabSpProject.Padding = new System.Windows.Forms.Padding(3);
+            this.tabSpProject.Size = new System.Drawing.Size(910, 513);
+            this.tabSpProject.TabIndex = 1;
+            this.tabSpProject.Text = "Spp";
+            this.tabSpProject.UseVisualStyleBackColor = true;
+            // 
+            // labelSecondPile
+            // 
+            this.labelSecondPile.AutoSize = true;
+            this.labelSecondPile.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.labelSecondPile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelSecondPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSecondPile.Location = new System.Drawing.Point(518, 338);
+            this.labelSecondPile.Name = "labelSecondPile";
+            this.labelSecondPile.Size = new System.Drawing.Size(65, 57);
+            this.labelSecondPile.TabIndex = 7;
+            this.labelSecondPile.Text = "   ";
+            // 
+            // labelFirstPile
+            // 
+            this.labelFirstPile.AutoSize = true;
+            this.labelFirstPile.BackColor = System.Drawing.SystemColors.MenuBar;
+            this.labelFirstPile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.labelFirstPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFirstPile.Location = new System.Drawing.Point(328, 338);
+            this.labelFirstPile.Name = "labelFirstPile";
+            this.labelFirstPile.Size = new System.Drawing.Size(65, 57);
+            this.labelFirstPile.TabIndex = 6;
+            this.labelFirstPile.Text = "   ";
+            // 
+            // labelCardsInDeck
+            // 
+            this.labelCardsInDeck.AutoSize = true;
+            this.labelCardsInDeck.BackColor = System.Drawing.Color.Black;
+            this.labelCardsInDeck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelCardsInDeck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.labelCardsInDeck.Location = new System.Drawing.Point(430, 171);
+            this.labelCardsInDeck.Name = "labelCardsInDeck";
+            this.labelCardsInDeck.Size = new System.Drawing.Size(0, 20);
+            this.labelCardsInDeck.TabIndex = 5;
+            // 
+            // buttonCardDraw
+            // 
+            this.buttonCardDraw.Location = new System.Drawing.Point(385, 69);
+            this.buttonCardDraw.Name = "buttonCardDraw";
+            this.buttonCardDraw.Size = new System.Drawing.Size(116, 170);
+            this.buttonCardDraw.TabIndex = 4;
+            this.buttonCardDraw.Text = "Draw";
+            this.buttonCardDraw.UseVisualStyleBackColor = true;
+            this.buttonCardDraw.Click += new System.EventHandler(this.buttonCardDraw_Click);
             // 
             // PH_project
             // 
@@ -277,6 +331,8 @@
             this.tabPhProject.ResumeLayout(false);
             this.tabPhProject.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonView)).EndInit();
+            this.tabSpProject.ResumeLayout(false);
+            this.tabSpProject.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -302,6 +358,10 @@
         private System.Windows.Forms.Label prezimeLabel;
         private System.Windows.Forms.Label nameLabel;
         private System.Windows.Forms.DataGridView dataPersonView;
+        private System.Windows.Forms.Label labelSecondPile;
+        private System.Windows.Forms.Label labelFirstPile;
+        private System.Windows.Forms.Label labelCardsInDeck;
+        private System.Windows.Forms.Button buttonCardDraw;
     }
 }
 
