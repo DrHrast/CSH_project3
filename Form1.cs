@@ -1,4 +1,5 @@
 ﻿using System;
+using System.CodeDom.Compiler;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -114,25 +115,30 @@ namespace PH_project3
             new Card{CardNumber = "K", CardSuit = "♣", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♠", CardColor = "black" },new Card{CardNumber = "K", CardSuit = "♥", CardColor = "red" },new Card{CardNumber = "K", CardSuit = "♦", CardColor = "red" }
         };
 
+        
         //Methods
-        public void removeCard(int index, Label label)
+        public void removeCard(int index, Label label, Label labelcopy)
         {
             if (Deck[index].CardColor == "black")
             {
                 label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                labelcopy.Text = Deck[index].CardNumber + Deck[index].CardSuit;
                 label.ForeColor = Color.Black;
+                labelcopy.ForeColor = Color.Black;
             }
             else
             {
                 label.Text = Deck[index].CardNumber + Deck[index].CardSuit;
+                labelcopy.Text = Deck[index].CardNumber + Deck[index].CardSuit;
                 label.ForeColor = Color.Red;
+                labelcopy.ForeColor = Color.Red;
             }
             Deck.RemoveAt(index);
             labelCardsInDeck.Text = Deck.Count.ToString();
         }
 
         //DID_IT - 03 Try adding tabs for possible other projects.
-        //TODO - 03.1 Tabs added, just figure out how to implement it (could be with new project or something else).
+        //DID_IT - 03.1 Tabs added, just figure out how to implement it (could be with new project or something else).
         public PH_project()
         {
             InitializeComponent();
@@ -145,7 +151,7 @@ namespace PH_project3
             progressBar.Value = 34;
             datumBox.Format = DateTimePickerFormat.Custom;
             datumBox.CustomFormat = "dd/MM/yyyy";
-
+           
             labelCardsInDeck.Text = Deck.Count.ToString();
         }
 
@@ -305,6 +311,7 @@ namespace PH_project3
         Random random = new Random();
         int nCards;
         int indexCard;
+        //DID_IT - 04 Make a method for removing cards
         private void buttonCardDraw_Click(object sender, EventArgs e)
         {
             if (Deck.Count == 0) { MessageBox.Show("No cards left.", "Reset the deck.", MessageBoxButtons.OK, MessageBoxIcon.Exclamation); }
@@ -314,16 +321,17 @@ namespace PH_project3
                 if (nCards == 0)
                 {
                     labelSecondPile.Text = "   ";
+                    labelSecondPile2.Text = "   ";
                     indexCard = random.Next(0, Deck.Count);
-                    removeCard(indexCard, labelFirstPile);
+                    removeCard(indexCard, labelFirstPile, labelFirstPile2);
                 }
                 else
                 {
                     indexCard = random.Next(0, Deck.Count);
-                    removeCard(indexCard, labelFirstPile);
+                    removeCard(indexCard, labelFirstPile, labelFirstPile2);
 
                     indexCard = random.Next(0, Deck.Count);
-                    removeCard(indexCard, labelSecondPile);
+                    removeCard(indexCard, labelSecondPile, labelSecondPile2);
                 }
                 labelCardsInDeck.Text = Deck.Count.ToString();
             }
@@ -331,7 +339,7 @@ namespace PH_project3
             {
                 labelSecondPile.Text = "   ";
                 indexCard = random.Next(0, Deck.Count);
-                removeCard(indexCard, labelFirstPile);
+                removeCard(indexCard, labelFirstPile, labelFirstPile2);
             }
         }
 

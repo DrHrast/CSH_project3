@@ -28,8 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.tabPH_project = new System.Windows.Forms.TabControl();
             this.tabPhProject = new System.Windows.Forms.TabPage();
             this.checkKeepDataBox = new System.Windows.Forms.CheckBox();
@@ -54,10 +54,16 @@
             this.labelCardsInDeck = new System.Windows.Forms.Label();
             this.buttonCardDraw = new System.Windows.Forms.Button();
             this.buttonReset = new System.Windows.Forms.Button();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.labelFirstPile2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.labelSecondPile2 = new System.Windows.Forms.Label();
             this.tabPH_project.SuspendLayout();
             this.tabPhProject.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonView)).BeginInit();
             this.tabSpProject.SuspendLayout();
+            this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tabPH_project
@@ -142,6 +148,7 @@
             // spolBox
             // 
             this.spolBox.FormattingEnabled = true;
+            this.spolBox.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.spolBox.Location = new System.Drawing.Point(78, 156);
             this.spolBox.Name = "spolBox";
             this.spolBox.Size = new System.Drawing.Size(47, 21);
@@ -236,36 +243,37 @@
             // dataPersonView
             // 
             this.dataPersonView.AllowUserToAddRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.ButtonShadow;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.ButtonShadow;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dataPersonView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.dataPersonView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.Format = "dd/MM/yyyy";
-            dataGridViewCellStyle2.NullValue = null;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle4.Format = "dd/MM/yyyy";
+            dataGridViewCellStyle4.NullValue = null;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dataPersonView.DefaultCellStyle = dataGridViewCellStyle4;
             this.dataPersonView.Location = new System.Drawing.Point(203, 59);
             this.dataPersonView.Name = "dataPersonView";
             this.dataPersonView.ReadOnly = true;
             this.dataPersonView.Size = new System.Drawing.Size(676, 395);
             this.dataPersonView.TabIndex = 20;
+            this.dataPersonView.ColumnHeaderMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataPersonView_ColumnHeaderMouseClick);
             // 
             // tabSpProject
             // 
+            this.tabSpProject.Controls.Add(this.panel2);
+            this.tabSpProject.Controls.Add(this.panel1);
             this.tabSpProject.Controls.Add(this.buttonReset);
-            this.tabSpProject.Controls.Add(this.labelSecondPile);
-            this.tabSpProject.Controls.Add(this.labelFirstPile);
             this.tabSpProject.Controls.Add(this.labelCardsInDeck);
             this.tabSpProject.Controls.Add(this.buttonCardDraw);
             this.tabSpProject.Location = new System.Drawing.Point(4, 22);
@@ -279,24 +287,22 @@
             // labelSecondPile
             // 
             this.labelSecondPile.AutoSize = true;
-            this.labelSecondPile.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.labelSecondPile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelSecondPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelSecondPile.Location = new System.Drawing.Point(518, 338);
+            this.labelSecondPile.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelSecondPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSecondPile.Location = new System.Drawing.Point(-2, -2);
             this.labelSecondPile.Name = "labelSecondPile";
-            this.labelSecondPile.Size = new System.Drawing.Size(65, 57);
+            this.labelSecondPile.Size = new System.Drawing.Size(123, 108);
             this.labelSecondPile.TabIndex = 7;
             this.labelSecondPile.Text = "   ";
             // 
             // labelFirstPile
             // 
             this.labelFirstPile.AutoSize = true;
-            this.labelFirstPile.BackColor = System.Drawing.SystemColors.MenuBar;
-            this.labelFirstPile.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.labelFirstPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 36F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.labelFirstPile.Location = new System.Drawing.Point(328, 338);
+            this.labelFirstPile.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelFirstPile.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFirstPile.Location = new System.Drawing.Point(-2, -2);
             this.labelFirstPile.Name = "labelFirstPile";
-            this.labelFirstPile.Size = new System.Drawing.Size(65, 57);
+            this.labelFirstPile.Size = new System.Drawing.Size(123, 108);
             this.labelFirstPile.TabIndex = 6;
             this.labelFirstPile.Text = "   ";
             // 
@@ -306,30 +312,76 @@
             this.labelCardsInDeck.BackColor = System.Drawing.Color.Black;
             this.labelCardsInDeck.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.labelCardsInDeck.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.labelCardsInDeck.Location = new System.Drawing.Point(430, 171);
+            this.labelCardsInDeck.Location = new System.Drawing.Point(98, 291);
             this.labelCardsInDeck.Name = "labelCardsInDeck";
             this.labelCardsInDeck.Size = new System.Drawing.Size(0, 20);
             this.labelCardsInDeck.TabIndex = 5;
             // 
             // buttonCardDraw
             // 
-            this.buttonCardDraw.Location = new System.Drawing.Point(385, 69);
+            this.buttonCardDraw.BackColor = System.Drawing.Color.DimGray;
+            this.buttonCardDraw.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.buttonCardDraw.Location = new System.Drawing.Point(55, 192);
             this.buttonCardDraw.Name = "buttonCardDraw";
             this.buttonCardDraw.Size = new System.Drawing.Size(116, 170);
             this.buttonCardDraw.TabIndex = 4;
             this.buttonCardDraw.Text = "Draw";
-            this.buttonCardDraw.UseVisualStyleBackColor = true;
+            this.buttonCardDraw.UseVisualStyleBackColor = false;
             this.buttonCardDraw.Click += new System.EventHandler(this.buttonCardDraw_Click);
             // 
             // buttonReset
             // 
             this.buttonReset.Location = new System.Drawing.Point(55, 47);
             this.buttonReset.Name = "buttonReset";
-            this.buttonReset.Size = new System.Drawing.Size(48, 50);
+            this.buttonReset.Size = new System.Drawing.Size(191, 44);
             this.buttonReset.TabIndex = 8;
             this.buttonReset.Text = "Reset Deck";
             this.buttonReset.UseVisualStyleBackColor = true;
             this.buttonReset.Click += new System.EventHandler(this.buttonReset_Click);
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel1.Controls.Add(this.labelFirstPile2);
+            this.panel1.Controls.Add(this.labelFirstPile);
+            this.panel1.Location = new System.Drawing.Point(307, 90);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(221, 356);
+            this.panel1.TabIndex = 9;
+            // 
+            // labelFirstPile2
+            // 
+            this.labelFirstPile2.AutoSize = true;
+            this.labelFirstPile2.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelFirstPile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelFirstPile2.Location = new System.Drawing.Point(-2, 244);
+            this.labelFirstPile2.Name = "labelFirstPile2";
+            this.labelFirstPile2.Size = new System.Drawing.Size(123, 108);
+            this.labelFirstPile2.TabIndex = 7;
+            this.labelFirstPile2.Text = "   ";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Gainsboro;
+            this.panel2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel2.Controls.Add(this.labelSecondPile2);
+            this.panel2.Controls.Add(this.labelSecondPile);
+            this.panel2.Location = new System.Drawing.Point(608, 90);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(221, 356);
+            this.panel2.TabIndex = 10;
+            // 
+            // labelSecondPile2
+            // 
+            this.labelSecondPile2.AutoSize = true;
+            this.labelSecondPile2.BackColor = System.Drawing.Color.Gainsboro;
+            this.labelSecondPile2.Font = new System.Drawing.Font("Microsoft Sans Serif", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.labelSecondPile2.Location = new System.Drawing.Point(-2, 242);
+            this.labelSecondPile2.Name = "labelSecondPile2";
+            this.labelSecondPile2.Size = new System.Drawing.Size(123, 108);
+            this.labelSecondPile2.TabIndex = 8;
+            this.labelSecondPile2.Text = "   ";
             // 
             // PH_project
             // 
@@ -345,6 +397,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataPersonView)).EndInit();
             this.tabSpProject.ResumeLayout(false);
             this.tabSpProject.PerformLayout();
+            this.panel1.ResumeLayout(false);
+            this.panel1.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -375,6 +431,10 @@
         private System.Windows.Forms.Label labelCardsInDeck;
         private System.Windows.Forms.Button buttonCardDraw;
         private System.Windows.Forms.Button buttonReset;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label labelFirstPile2;
+        private System.Windows.Forms.Label labelSecondPile2;
     }
 }
 
